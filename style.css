@@ -2,23 +2,14 @@
   font-size: 44px
 }
 
-.nav-tabs {
+.nav-tabs, #page-context-menu {
   display: none;
 }
 
-#sidebar {
-  /* background-color: pink; */
+#navbar, #navbar button {
+    background-color: #f4f2f0;
 }
 
-.peer.is-not-custom~.peer-\[\.is-not-custom\]\:lg\:px-8 {
-  /* padding-left: 0px;
-  padding-right: 0px; */
-}
-
-#table-of-contents {
-  display: none;
-}
-
-#page-context-menu,#pagination,#footer {
-    display: none;
+.max-lg {
+    padding-left: 0 !important;
 }
