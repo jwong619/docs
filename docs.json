@@ -3,66 +3,93 @@
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#686a6e",
+    "light": "#E4F222",
+    "dark": "#E4F222"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/ramp.svg",
   "navigation": {
     "tabs": [
       {
         "tab": "Guides",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
+              "getting-started",
+              "build-with-ramp",
+              "changelog",
+              "mCP"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Guides",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "guides/accounting",
+              "guides/custom-records",
+              "guides/virtual-cards",
+              "guides/cards-and-funds",
+              "guides/bill-pay"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Developer Resources",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "dev/authorization",
+              "dev/pagination",
+              "dev/sandbox",
+              "dev/rate-limiting-and-timeouts",
+              "dev/webhooks",
+              "dev/debugging",
+              "dev/errors",
+              "dev/data-relationships",
+              "dev/monetary-values",
+              "dev/deferred-tasks"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "REST API",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "api/accounting",
+              "api/accounting-gl-accounts",
+              "api/accounting-connections",
+              "api/accounting-inventory-item",
+              "api/accounting-sync",
+              "api/accounting-tax",
+              "api/accounting-vendors",
+              "api/audit-logs",
+              "api/authorization",
+              "api/bank-accounts",
+              "api/bills",
+              "api/business",
+              "api/cards",
+              "api/cashbacks",
+              "api/custom-records-configurations",
+              "api/custom-records-custom-tables",
+              "api/custom-records-matrix-tables",
+              "api/custom-records-native-tables",
+              "api/departments",
+              "api/entities",
+              "api/item-receipts",
+              "api/leads",
+              "api/limits",
+              "api/locations",
+              "api/memos",
+              "api/merchants",
+              "api/purchase-orders",
+              "api/receipt-integrations",
+              "api/receipts",
+              "api/reimbursements",
+              "api/spend-programs",
+              "api/statements",
+              "api/transactions",
+              "api/transfers",
+              "api/trips",
+              "api/users",
+              "api/vault",
+              "api/vendors",
+              "api/webhooks"
             ]
           }
         ]
@@ -70,8 +97,8 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/ramp-logo.svg",
+    "dark": "/logo/ramp-logo.svg"
   },
   "navbar": {
     "links": [

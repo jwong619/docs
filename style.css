@@ -1,0 +1,15 @@
+#page-title {
+  font-size: 44px
+}
+
+.nav-tabs, #page-context-menu {
+  display: none;
+}
+
+#navbar, #navbar button {
+    background-color: #f4f2f0;
+}
+
+.max-lg {
+    padding-left: 0 !important;
+}

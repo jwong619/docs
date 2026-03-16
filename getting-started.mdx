@@ -1,0 +1,57 @@
+---
+title: "Getting Started"
+description: "This guide will help you make your first Ramp API call in just a few minutes. You'll create an access token and call the Transactions API to retrieve transaction data."
+---
+
+Get your documentation site running locally and make your first customization.
+This guide assumes you are a Ramp customer with <b>admin</b> access to your dashboard. Need a test environment for development? Request access to our <a href="https://docs.ramp.com/developer-api/v1/sandbox" target="_blank">Sandbox</a>.
+
+# 1. Create your app and get credentials
+
+First, you'll need to create a developer app to get your API credentials.
+
+<ol>
+  <li>
+    In your Ramp account, go to <b>Company → Developer</b> (you'll need admin
+    access).
+  </li>
+  <li>
+    Click <b>Create New App</b>.
+  </li>
+  <li>Name your app (e.g., "API Quickstart") and accept the Terms.</li>
+  <li>
+    Under <b>Grant types</b>, click <b>Add new grant type</b> → select{" "}
+    <b>Client Credentials</b>.
+  </li>
+  <li>
+    Under <b>Scopes</b>, click <b>Configure allowed scopes</b> and select
+    transactions:read.
+  </li>
+  <li>
+    Copy your <b>Client ID</b> and <b>Client Secret</b>. Store them securely –
+    you'll need them in the next step.
+  </li>
+</ol>
+
+For more details on authorization, see the <a href="https://docs.ramp.com/developer-api/v1/authorization" target="_blank">Authorization Guide</a>.
+
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.youtube.com/embed/4KzFe50RQkQ"
+  title="YouTube video player"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+></iframe>
+
+# 2. Get an access token
+
+With your credentials, request an access token. The token authenticates your API requests.
+
+- https://demo-api.ramp.com for Sandbox
+- https://api.ramp.com for Production
+
+# 3. Make your first API call
+
+With your access token, you can now call the Ramp API. Let's retrieve your transactions using the GET /transactions endpoint.
+
+`Add the header Authorization: Bearer <YOUR_TOKEN_HERE> and make a GET request to {environment-url}/developer/v1/transactions.`
