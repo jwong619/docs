@@ -1,49 +1,96 @@
 ---
 title: "Introduction"
-description: "Automate spend, connect your systems, and build powerful integrations—all with one API."
+description: ""
 ---
 
-<a href="https://docs.ramp.com/developer-api/v1/sandbox" target="_blank">
-  Learn more about building integrations with Ramp.
+Automate spend, connect your systems, and build powerful integrations—all with one API.
+
+<a
+  className="body-links-main"
+  href="https://docs.ramp.com/developer-api/v1/build-with-ramp"
+  target="_blank"
+>
+  <span id="underline">Learn more about building integrations with Ramp</span>
+  <span>.</span>
 </a>
 
-<Columns cols={3}>
-  <Card
-    title="Start Building"
-    href="/path"
-    icon="plus"
-    cta=""
-    horizontal
-  ></Card>
-  <Card title="" href="/path">
-    View Documentation
-  </Card>
-  <Card title="" icon="plus" href="/quickstart" horizontal>
-    View OpenAPI Spec
-  </Card>
-</Columns>
+<table className="btn-group-intro">
+  <tbody>
+    <td className="btn-start">
+      <Card href="/getting-started" horizontal>
+        &plus;&nbsp;&nbsp; Start Building
+      </Card>
+    </td>
+    <td className="btn-doc">
+      <Card href="/dev/authorization" horizontal>
+        View Documentation
+      </Card>
+    </td>
+    <td className="btn-spec">
+      <Card href="https://docs.ramp.com/openapi/developer-api.json" horizontal>
+        ↗&nbsp; &nbsp;View OpenAPI Spec
+      </Card>
+    </td>
+  </tbody>
+</table>
 
 # Quickstart Guides
 
-<Columns cols={2}>
-  <Card title="" icon="pen-to-square" href="/development" horizontal>
+<Columns cols={2} className="intro-card-container">
+  <Card
+    title=""
+    icon="/icons/api.svg"
+    href="/getting-started"
+    horizontal
+    className="box"
+  >
     Make your first API call in minutes
   </Card>
-  <Card title="" icon="palette" href="/essentials/settings" horizontal>
+  <Card
+    title=""
+    icon="/icons/ashield.svg"
+    href="/dev/authorization"
+    horizontal
+    className="box"
+  >
     Authorize with OAuth 2.0 for secure access
   </Card>
-  <Card title="" icon="pen-to-square" href="/development" horizontal>
+  <Card
+    title=""
+    icon="/icons/card.svg"
+    href="guides/cards-and-funds"
+    horizontal
+    className="box"
+  >
     Manage team spending with cards and funds
   </Card>
-  <Card title="" icon="palette" href="/essentials/settings" horizontal>
+  <Card
+    title=""
+    icon="/icons/bolt.svg"
+    href="guides/virtual-cards"
+    horizontal
+    className="box"
+  >
     Optimize payments with Virtual Cards
   </Card>
-  <Card title="" icon="pen-to-square" href="/development" horizontal>
+  <Card
+    title=""
+    icon="/icons/sys.svg"
+    href="guides/accounting"
+    horizontal
+    className="box"
+  >
     Connect your ERP or accounting system
   </Card>
-  <Card title="" icon="palette" href="/essentials/settings" horizontal>
+  <Card
+    title=""
+    icon="/icons/chat.svg"
+    href="/ramp-mcp"
+    horizontal
+    className="box"
+  >
     Use the Ramp MCP to chat with your data
   </Card>
 </Columns>
 
-Need help? <a href="https://docs.ramp.com/developer-api/v1/sandbox" target="\_blank">Submit a Developer API support ticket</a> and our team will follow up.
+Need help? <a className="body-links" href="https://docs.ramp.com/developer-api/v1/sandbox" target="_blank"><span>Submit a Developer API support ticket</span></a> and our team will follow up.
