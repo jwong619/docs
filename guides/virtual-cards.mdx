@@ -2,3 +2,104 @@
 title: "Virtual Cards"
 description: ""
 ---
+
+<div className="support-note">
+  <Callout icon="none">
+    Due to PCI compliance requirements, 16-digit card numbers and CVVs are not
+    available in production without approval. All customers will see these
+    fields in Sandbox. Submit a Developer API support ticket to begin the
+    qualification process for access.
+  </Callout>
+</div>
+
+# <div className="subtitle"><span>Virtual Cards</span></div>
+
+Create and manage virtual cards with customizable spend and fraud controls, so you can safely embed payments into your apps, agents, or backend workflows.
+
+<ul className="lists">
+  <li>
+    For delivering virtual cards to vendors <b>without PCI compliance</b>{" "}
+    requirements, see the card payment options in our{" "}
+    <a
+      className="body-links"
+      href="https://docs.ramp.com/developer-api/v1/bill-pay#pay-by-card"
+      target="_blank"
+    >
+      Bill Pay guide.
+    </a>
+  </li>
+  <li>
+    For managing physical cards and funds, see our{" "}
+    <a
+      className="body-links"
+      href="https://docs.ramp.com/developer-api/v1/cards-and-funds"
+      target="_blank"
+    >
+      Cards and Funds guide.
+    </a>
+  </li>
+</ul>
+___
+
+# <div className="subtitle"><span>Example Use Cases</span></div>
+
+Create and manage virtual cards with customizable spend and fraud controls, so you can safely embed payments into your apps, agents, or backend workflows.
+
+<ul className="lists">
+  <li>
+    <b>Travel Platforms</b> - Generate single-use virtual cards for each booking
+    to streamline reconciliation and simplify refund workflows
+    </li><li>
+      <b>B2B Marketplaces</b> - Provide instant supplier payments via virtual cards
+      while earning interchange on each transaction
+    </li>
+
+  <li>
+    <b>Procurement & AP Platforms</b>- Replace ACH payments with card
+  </li>
+  <li>
+    <b>AI Agents</b> - Enable AI agents to make autonomous payments with controlled spending limits and merchant restrictions
+  </li>
+</ul>
+___
+
+# <div className="subtitle"><span>How It Works</span></div>
+
+## <div><span>1. Card Issuance</span></div>
+
+A virtual card is generated instantly via Ramp’s API, optionally configured with:
+
+<ul className="lists">
+  <li>
+    <b>Merchant restrictions</b> – limiting transactions to specific providers
+    (such as airlines or hotels)
+  </li>
+  <li>
+    <b>Spending caps</b> – ensuring charges do not exceed predefined thresholds
+  </li>
+  <li>
+    <b>Expiration dates</b> – to auto-expire unused cards for security and
+    refund alignment
+  </li>
+</ul>
+
+## <div><span>2. Payment Execution</span></div>
+
+The generated card details (PAN, CVV, expiration) are securely delivered via Ramp’s Vault API. You pass these details to your vendor, travel partner, or supplier to process payment.
+
+## <div><span>3. Reconciliation</span></div>
+
+<ul className="lists">
+  <li>
+    <b>Card ID → Transaction mapping</b> makes it easy to automate
+    reconciliation
+  </li>
+  <li>
+    <b>Supports adjustments & refunds</b> even after the card is locked or
+    expired
+  </li>
+  <li>
+    <b>Webhooks are supported</b> for notifications when a card is used,
+    declined, or refunded
+  </li>
+</ul>

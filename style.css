@@ -165,6 +165,10 @@ body, .cursor-pointer {
   padding: 5px 9px;
 }
 
+.btn-spec a div #card-link-arrow-icon {
+  display: none;
+}
+
 .btn-doc a :hover, .btn-spec a :hover {
   background-color: #f4f2f0;
   color: #1A1919;
@@ -201,10 +205,6 @@ body, .cursor-pointer {
   display: none;
 }
 
-
-#content-side-layout {
-
-}
 
 
 
@@ -294,6 +294,10 @@ body, .cursor-pointer {
   font-size: 16px;
 }
 
-.support-note div svg {
+.support-note div svg, .support-note > div > div svg {
   color: #876634
+}
+
+.med-height {
+  line-height: 50px;
 }
