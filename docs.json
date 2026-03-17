@@ -3,11 +3,11 @@
   "theme": "mint",
   "name": "Mint Starter Kit",
   "colors": {
-    "primary": "#686a6e",
-    "light": "#E4F222",
+    "primary": "#1A1919",
+    "light": "#D2CECB",
     "dark": "#E4F222"
   },
-  "favicon": "/ramp.svg",
+  "favicon": "/favicon-ramp.svg",
   "navigation": {
     "tabs": [
       {
@@ -20,15 +20,36 @@
               "getting-started",
               "build-with-ramp",
               "changelog",
-              "mCP"
+              {
+                "group": "MCP",
+                "expanded": false,
+                "pages": [
+                  "ramp-mcp",
+                  "developer-mcp"
+                ]
+              }
             ]
           },
           {
             "group": "Guides",
             "pages": [
-              "guides/accounting",
+              {
+                "group": "Accounting",
+                "expanded": false,
+                "pages": [
+                  "/guides/accounting/erp-migration-tool",
+                  "/guides/accounting/tax-codes",
+                  "/guides/accounting/vendor-credits"
+                ]
+              },
               "guides/custom-records",
-              "guides/virtual-cards",
+              {
+                "group": "Virtual Cards",
+                "expanded": false,
+                "pages": [
+                  "/guides/virtual-cards/embedded-cards"
+                ]
+              },
               "guides/cards-and-funds",
               "guides/bill-pay"
             ]
@@ -101,14 +122,10 @@
   },
   "logo": {
     "light": "/logo/ramp-logo.svg",
-    "dark": "/logo/ramp-logo.svg"
+    "dark": "/logo/ramp-logo-dark.svg"
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
-      }
     ],
     "primary": {
       "type": "button",
@@ -128,11 +145,10 @@
      "vscode"
    ]
   },
+  "search": {
+  "prompt": "Search"
+  },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "socials": {}
   }
 }

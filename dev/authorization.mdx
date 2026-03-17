@@ -2,3 +2,160 @@
 title: "Authorization"
 description: ""
 ---
+
+Ramp uses OAuth 2.0 for secure API access, providing granular permission control through scopes and supporting multiple authorization flows for different use cases.
+
+This guide covers the authorization framework in depth. For a quick start making your first API calls, see the <a href="https://docs.ramp.com/developer-api/v1/getting-started"
+target="_blank">Setup Guide</a>.
+
+---
+
+# <div className="subtitle"><span>OAuth 2.0 Framework</span></div>
+
+Ramp implements the OAuth 2.0 authorization framework with the following components:
+
+<ul className="lists">
+  <li>
+    <b>Resource Server</b>: Ramp's API endpoints that serve protected resources
+  </li>
+  <li>
+    <b>Authorization Server</b>: Ramp's OAuth service that issues access tokens
+  </li>
+  <li>
+    <b>Client</b>: Your application requesting access to Ramp resources
+  </li>
+  <li>
+    <b>Resource Owner</b>: The Ramp business granting access to their data
+  </li>
+</ul>
+
+# <div className="spacer">Supported Grant Types</div>
+
+| Grant Type         |                 Use Case                  |       User Interaction |
+| :----------------- | :---------------------------------------: | ---------------------: |
+| Client Credentials |  Internal integrations, server-to-server  |          None required |
+| Authorization Code | TeThird-party apps, public integrationsxt | Admin consent required |
+
+---
+
+# <div className="subtitle"><span>Permission Model & Scopes</span></div>
+
+Ramp's permission model uses OAuth 2.0 scopes to control access to different resources and operations. Each scope follows the pattern `resource:permission` where:
+
+<ul className="lists">
+  <li>
+    <b>resource</b>: The API resource (e.g., `transactions`, `bills`, `users`)
+  </li>
+  <li>
+    <b>permission</b>: The allowed operation (`read` or `write`)
+  </li>
+</ul>
+
+# <div className="spacer-small">Available Scopes</div>
+
+&nbsp;
+
+# <div className="subtitle"><span>FAQ</span></div>
+
+<div className="support-note">
+  <Note>
+    <div>Need help?</div>
+    <div className="spacer-small">
+      <a
+        className="body-links"
+        href="https://docs.ramp.com/developer-api/v1/debugging#how-to-submit-a-developer-api-support-ticket"
+        target="_blank"
+      >
+        Submit a Developer API support ticket
+      </a>{" "}
+      and our team will follow up.
+    </div>
+  </Note>
+</div>
+
+### <div className="spacer-small">How do I know which scopes my app needs?</div>
+
+<div className="spacer-small">
+  Review the API endpoints your app will use. Each endpoint's documentation
+  lists required scopes. Start with read-only scopes and add write permissions
+  as needed.
+</div>
+
+---
+
+### <div className="spacer-small">Can I use the same app for both sandbox and production?</div>
+
+<div className="spacer-small">
+  No, each environment requires separate app configurations. Create one app in
+  sandbox for testing and another in production for live usage.
+</div>
+
+---
+
+### <div className="spacer-small">Why can't regular users authorize my app?</div>
+
+<div className="spacer-small">
+  For security reasons, only users with Admin or Business Owner roles can grant OAuth2 permissions to third-party applications. This ensures proper oversight of data access.
+
+</div>
+
+---
+
+### <div className="spacer-small">How often should I refresh access tokens?</div>
+
+<div className="spacer-small">
+  Access tokens last 10 days. Implement refresh logic before expiration rather
+  than waiting for 401 errors. For long-running applications, refresh tokens
+  daily or when starting new sessions.
+</div>
+
+---
+
+### <div className="spacer-small">What happens if I request scopes my app isn't configured for?</div>
+
+<div className="spacer-small">
+  The authorization server will return an `invalid_scope` error. Configure all
+  required scopes in your app settings before requesting them in authorization
+  flows.
+</div>
+
+---
+
+### <div className="spacer-small">Can I modify scopes for existing access tokens?</div>
+
+<div className="spacer-small">
+  No, scopes are bound to tokens at issuance time. To change scopes, you must
+  obtain a new access token with the updated scope configuration.
+</div>
+
+---
+
+### <div className="spacer-small">My customer gets "Business not authorized to use this application" - what's wrong?</div>
+
+<div>
+  <ul className="lists">
+    <li>
+      Only users with Admin or Business Owner roles can authorize third-party
+      applications
+    </li>
+    <li>
+      Ask your customer to have an Admin or Business Owner complete the
+      authorization flow
+    </li>
+    <li>Regular users cannot grant OAuth2 permissions for security reasons</li>
+  </ul>
+</div>
+
+---
+
+### <div className="spacer-small">Can I modify scopes for existing access tokens?</div>
+
+<div>
+  <ul className="lists">
+  <li>The customer should verify their role in Settings > Team</li>
+<li>Admin and Business Owner roles are clearly labeled in the Ramp UI</li>
+<li>If uncertain, they should contact their Ramp administrator</li>
+</ul>
+</div>
+
+---

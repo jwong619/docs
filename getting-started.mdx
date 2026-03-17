@@ -1,16 +1,21 @@
 ---
 title: "Getting Started"
-description: "This guide will help you make your first Ramp API call in just a few minutes. You'll create an access token and call the Transactions API to retrieve transaction data."
+description: ""
 ---
 
-Get your documentation site running locally and make your first customization.
-This guide assumes you are a Ramp customer with <b>admin</b> access to your dashboard. Need a test environment for development? Request access to our <a href="https://docs.ramp.com/developer-api/v1/sandbox" target="_blank">Sandbox</a>.
+This guide will help you make your first Ramp API call in just a few minutes. You'll create an access token and call the Transactions API to retrieve transaction data.
 
-# 1. Create your app and get credentials
+Get your documentation site running locally and make your first customization.
+This guide assumes you are a Ramp customer with <b>admin</b> access to your dashboard. Need a test environment for development? Request access to our <a
+className="body-links"
+href="https://docs.ramp.com/developer-api/v1/sandbox"
+target="_blank"> Sandbox</a>.
+
+# <div className="subtitle"><span>1. Create your app and get credentials</span></div>
 
 First, you'll need to create a developer app to get your API credentials.
 
-<ol>
+<ol className="getting-started-steps">
   <li>
     In your Ramp account, go to <b>Company → Developer</b> (you'll need admin
     access).
@@ -33,25 +38,134 @@ First, you'll need to create a developer app to get your API credentials.
   </li>
 </ol>
 
-For more details on authorization, see the <a href="https://docs.ramp.com/developer-api/v1/authorization" target="_blank">Authorization Guide</a>.
+For more details on authorization, see the <a href="https://docs.ramp.com/developer-api/v1/authorization"
+target="_blank">Authorization Guide</a>.
 
-<iframe
-  className="w-full aspect-video rounded-xl"
-  src="https://www.youtube.com/embed/4KzFe50RQkQ"
-  title="YouTube video player"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowFullScreen
-></iframe>
+<div className="authorization">
+  <iframe
+    className="aspect-video"
+    src="/example-vid.mp4"
+    title="YouTube video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</div>
 
-# 2. Get an access token
+# <div className="subtitle"><span>2. Get an access token</span></div>
 
 With your credentials, request an access token. The token authenticates your API requests.
 
-- https://demo-api.ramp.com for Sandbox
-- https://api.ramp.com for Production
+Replace `{environment-url}` with:
 
-# 3. Make your first API call
+<ul className="lists">
+  <li>`https://demo-api.ramp.com` for Sandbox</li>
+  <li>`https://api.ramp.com` for Production</li>
+</ul>
 
-With your access token, you can now call the Ramp API. Let's retrieve your transactions using the GET /transactions endpoint.
+<div className="spacer">
+  <span>Request an access token</span>
+</div>
 
-`Add the header Authorization: Bearer <YOUR_TOKEN_HERE> and make a GET request to {environment-url}/developer/v1/transactions.`
+<CodeGroup>
+```java Shell
+curl -X POST '{environment-url}/developer/v1/token' \
+  -H "Authorization: Basic $(echo -n "$CLIENT_ID:$CLIENT_SECRET" | base64)" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "grant_type=client_credentials" \
+  -d "scope=transactions:read"
+```
+
+```javascript JavaScript
+const response = await fetch("{environment-url}/developer/v1/token", {
+  method: "POST",
+  headers: {
+    Authorization: `Basic ${btoa(`${clientId}:${clientSecret}`)}`,
+    "Content-Type": "application/x-www-form-urlencoded",
+  },
+  body: new URLSearchParams({
+    grant_type: "client_credentials",
+    scope: "transactions:read",
+  }),
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```python Python
+import base64, requests
+
+auth = base64.b64encode(f"{client_id}:{client_secret}".encode()).decode()
+
+response = requests.post(
+  "{environment-url}/developer/v1/token",
+  headers={
+    "Authorization": f"Basic {auth}",
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  data={
+    "grant_type": "client_credentials",
+    "scope": "transactions:read"
+  }
+)
+
+print(response.json())
+```
+
+</CodeGroup>
+
+<div className="spacer">
+  <span>Response:</span>
+</div>
+
+```
+{
+  {
+  "access_token": "ramp_tok_abc123...",
+  "token_type": "bearer",
+  "expires_in": 864000,
+  "scope": "transactions:read"
+  }
+}
+```
+
+Copy the `access_token` – you'll use it to make API calls. Tokens expire after 10 days.
+
+# <div className="subtitle"><span>3. Make your first API call</span></div>
+
+With your access token, you can now call the Ramp API. Let's retrieve your transactions using the <a href="https://docs.ramp.com/developer-api/v1/api/transactions#get-developer-v1-transactions"
+target="_blank">GET /transactions</a> endpoint.
+
+Add the header `Authorization: Bearer <YOUR_TOKEN_HERE> and make a GET request to {environment-url}/developer/v1/transactions`.
+
+<div className="spacer">
+  <span>Get transactions</span>
+</div>
+
+<CodeGroup>
+```java Shell
+curl -X GET '{environment-url}/developer/v1/transactions' \
+  -H "Authorization: Bearer $ACCESS_TOKEN"
+```
+
+```javascript JavaScript
+const response = await fetch("{environment-url}/developer/v1/transactions", {
+  headers: {
+    Authorization: `Bearer ${accessToken}`,
+  },
+});
+
+const data = await response.json();
+console.log(data);
+```
+
+```python Python
+response = requests.get(
+  "{environment-url}/developer/v1/transactions",
+  headers={"Authorization": f"Bearer {access_token}"}
+)
+
+print(response.json())
+```
+
+</CodeGroup>

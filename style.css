@@ -1,15 +1,299 @@
+/* ------------------------------ Introduction tab styling ------------------------------*/
+
+@font-face {
+  font-family: 'Lausanne'; 
+  src: url('fonts/Lausanne.woff') format('woff'),
+       url('fonts/Lausanne-header.woff') format('woff'),
+       url('fonts/Lausanne-link.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+#table-of-contents-layout {
+  display: none;
+}
+
+.nav-logo {
+  opacity: 0.5;
+}
+
+body, .cursor-pointer {
+  font-family: 'Lausanne', Inter, Roboto, Arial, sans-serif;
+}
+
+
 #page-title {
-  font-size: 44px
+  font-family: 'Lausanne-header', Inter, Roboto, Arial, sans-serif;
+}
+
+#header div {
+  font-size: 16px;
+}
+
+.no-underline {
+  text-decoration: none;    
+}
+
+.body-links-main, .body-links-main span  {
+  font-family: 'Lausanne', Inter, Roboto, Arial, sans-serif;
+  letter-spacing: normal;
+  font-weight: 500;
+  border-bottom: none;
+} 
+#underline {
+  text-decoration: underline;
+} 
+
+.body-links, .body-links span  {
+  font-family: 'Lausanne', Inter, Roboto, Arial, sans-serif;
+  letter-spacing: normal;
+  font-weight: 500;
+  border-bottom: none;
+  text-decoration: underline;
+}
+
+.cursor-pointer  {
+  font-weight: 500;
+}
+
+#header .text-primary {
+  font-weight: 300;
+}
+
+#page-title {
+  font-size: 56px;
+  padding-top: 10px;
+  margin-top: 6px;
+}
+
+#header {
+  padding-top: 45px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+
+/* #navbar, #navbar button {
+    background-color: #f4f2f0;
+} */
+
+
+#content-area {
+  /* color: #1A1919; */
+}
+#content, #content span, #content div, .link-color {
+  /* color: #1A1919; */
+}
+
+#content {
+  margin-top: 38px
+}
+
+#page-title::selection, #content-area::selection, #sidebar-title::selection, .cursor-pointer::selection {
+  background: #E4F222;
+}
+
+#table-of-contents-layout svg, #table-of-contents-layout button {
+  display: none;
 }
 
 .nav-tabs, #page-context-menu {
   display: none;
 }
 
-#navbar, #navbar button {
-    background-color: #f4f2f0;
+.parent-class:has(.nav-tabs) {
+  display: none;
 }
 
-.max-lg {
-    padding-left: 0 !important;
+
+#navbar > div:nth-of-type(2) > div > div:nth-of-type(2) {
+  display: none;
+}
+
+#navbar div:nth-of-type(2) > div > div > button > div:nth-of-type(2) {
+  display: none;
+} 
+
+.btn-group-intro a, .intro-card-container a {
+  border-radius: 0px !important;
+}
+
+.btn-group-intro a:hover {
+  text-decoration: underline;
+}
+
+.btn-group-intro {
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+
+#quickstart-guides {
+  margin-top: 14px !important;
+  margin-bottom: 12px;
+}
+
+.intro-card-container a  {
+  background-color: #fcfbfa;
+  /* color: #1A1919; */
+}
+
+.intro-card-container img {
+  width: 16px;
+}
+
+
+.btn-start a div {
+  background-color: #E4F222;
+  padding: 5px 9px;
+}
+
+.btn-start a {
+  border-color: #E4F222;
+}
+.btn-start a:hover {
+  border-color: #E4F222 !important;
+}
+
+
+.btn-doc a div {
+  padding: 5px 8px;
+}
+
+.btn-spec a div {
+  padding: 5px 9px;
+}
+
+.btn-doc a :hover, .btn-spec a :hover {
+  background-color: #f4f2f0;
+  color: #1A1919;
+}
+
+.intro-card-container a:hover {
+  background-color: #f4f2f0;
+}
+
+.intro-card-container a {
+  /* padding: 3px 8px; */
+}
+
+.intro-card-container a {
+  margin-bottom: 18px;
+}
+
+.intro-card-container {
+  column-gap: 26px;
+}
+
+.intro-card-container .box a, .intro-card-container .box a span {
+  padding-left: 0px;
+}
+/* .inntro-card-container a {
+  padding-left: 0px;
+} */
+
+#pagination,#footer {
+  display: none
+}
+
+#navbar li {
+  display: none;
+}
+
+
+#content-side-layout {
+
+}
+
+
+
+
+/* @media (prefers-color-scheme: light) {
+
+  .btn-start a div {
+    color: #1A1919 !important
+  }
+  .btn-start a:hover {
+    border-color: #E4F222 !important;
+  }
+
+  #content-area {
+    color: #D2CECB;
+  }
+  #content, #content span, #content div, .link-color {
+    color: #D2CECB;
+  }
+  .btn-doc a :hover, .btn-spec a :hover {
+    background-color: #f4f2f0;
+    color: #D2CECB;
+  }
+
+} */
+/* 
+
+  #navbar, #navbar button {
+    background-color: pink !important;
+  }
+
+
+#navbar div {
+  display: block;
+  padding: 5px 0;
+} */
+
+
+/* ------------------------------ Getting Started tab styling ------------------------------*/
+
+
+.subtitle {
+  font-size: 40px;
+  font-weight: 500;
+  padding-top: 25px;
+}
+
+.spacer {
+  padding-top: 20px;
+}
+
+.spacer-small {
+  padding-top: 5px;
+}
+
+.spacer-bottom {
+  margin-bottom: 10px;
+}
+
+.lists li {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-left: 26px !important;
+} 
+
+.circle-list {
+  list-style-type: circle;
+}
+
+.authorization {
+  width: 600px;
+  max-width: 600px;
+  border-radius: 12px;
+}
+
+#table-of-contents-layout li {
+  text-decoration: underline;
+}
+
+
+
+.support-note div {
+  border-radius: 0px;
+  background-color: #feffe1;
+  border-color: #876634;
+  color: #876634;
+  font-size: 16px;
+}
+
+.support-note div svg {
+  color: #876634
 }
