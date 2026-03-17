@@ -24,7 +24,8 @@ body, .cursor-pointer {
 
 
 #page-title {
-  font-family: 'Lausanne-header', Inter, Roboto, Arial, sans-serif;
+  font-family: 'Lausanne', Inter, Roboto, Arial, sans-serif;
+  font-weight: 900
 }
 
 #header div {
